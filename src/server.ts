@@ -8,15 +8,23 @@ import {
   validatorCompiler,
   ZodTypeProvider,
 } from "fastify-type-provider-zod";
+import fastifyHelmet from "@fastify/helmet";
 
 import { routes } from "./users/routes.js";
 
-const app = fastify({ logger: true }).withTypeProvider<ZodTypeProvider>();
+const app = fastify({
+  logger: {
+    transport: {
+      target: "@fastify/one-line-logger",
+    },
+  },
+}).withTypeProvider<ZodTypeProvider>();
 
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
 app.register(fastifyCors, { origin: "*" });
+app.register(fastifyHelmet)
 
 app.register(fastifySwagger, {
   openapi: {
@@ -30,7 +38,7 @@ app.register(fastifySwagger, {
 });
 
 app.register(fastifySwaggerUi, {
-  routePrefix: "/api/docs",
+  routePrefix: "/api",
 });
 
 app.register(routes);
@@ -42,8 +50,8 @@ async function run() {
       port: 3333,
       host: "0.0.0.0",
     });
-    app.log.info(`Server listening on http://localhost:3333`);
-    app.log.info(`Swagger UI available on http://localhost:3333/api/docs`);
+
+    app.log.info(`Swagger UI available on http://localhost:3333/api`);
   } catch (err) {
     app.log.error(err);
     process.exit(1);
