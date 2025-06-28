@@ -24,7 +24,6 @@ export async function routes(router: FastifyTypeInstance) {
     }
   );
 
-
   router.post(
     "/users",
     {
@@ -47,13 +46,13 @@ export async function routes(router: FastifyTypeInstance) {
     async (request, reply) => {
       const { name, email } = request.body;
 
-      const newUser = {
+      const data = {
         id: "123e4567-e89b-12d3-a456-426614174000",
         name,
         email,
       };
 
-      return reply.status(201).send(newUser);
+      return reply.status(201).send(data);
     }
   );
 }
