@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { FastifyTypeInstance } from "../@types/fastify-type-instance.js";
+import type { FastifyTypeInstance } from "@/@types/fastify-type-instance.js";
 
 export async function routes(router: FastifyTypeInstance) {
 	router.get(

@@ -1,4 +1,4 @@
-import { fastify } from "./config.js";
+import { fastify } from "@/config.js";
 
 async function run() {
 	try {

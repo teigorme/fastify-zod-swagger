@@ -2,7 +2,7 @@
 	"name": "fastify-zod-swagger",
 	"version": "1.0.0",
 	"type": "module",
-	"description": "Sample backend service",
+	"description": "Simple backend service",
 	"main": "index.js",
 	"scripts": {
 		"start": "node dist/server.js",

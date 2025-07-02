@@ -10,7 +10,7 @@ import {
 } from "fastify-type-provider-zod";
 import fastifyHelmet from "@fastify/helmet";
 
-import { routes } from "./users/routes.js";
+import { routes } from "@/routes/routes.js";
 
 export const fastify = Fastify({
 	logger: {
