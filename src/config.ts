@@ -10,7 +10,8 @@ import {
 } from "fastify-type-provider-zod";
 import fastifyHelmet from "@fastify/helmet";
 
-import { routes } from "@/routes/routes.js";
+import { routes } from "@/routes/auth/routes.js";
+import prismaPlugin from "./lib/prisma.js";
 
 export const fastify = Fastify({
 	logger: {
@@ -30,7 +31,7 @@ fastify.register(fastifySwagger, {
 	openapi: {
 		info: {
 			title: "Fastify API",
-			description: "Sample backend service",
+			description: "Simple backend service",
 			version: "1.0.0",
 		},
 	},
@@ -40,5 +41,5 @@ fastify.register(fastifySwagger, {
 fastify.register(fastifySwaggerUi, {
 	routePrefix: "/api",
 });
+fastify.register(prismaPlugin).register(routes)
 
-fastify.register(routes);
