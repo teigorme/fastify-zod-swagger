@@ -1,39 +1,44 @@
 {
-  "name": "fastify-zod-swagger",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "Sample backend service",
-  "main": "index.js",
-  "scripts": {
-    "start": "node dist/server.js",
-    "build": "tsc",
-    "dev": "tsx watch src/server.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/teigorme/fastify-zod-swagger.git"
-  },
-  "keywords": [],
-  "author": "Igor Teixeira",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/teigorme/fastify-zod-swagger/issues"
-  },
-  "homepage": "https://github.com/teigorme/fastify-zod-swagger#readme",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-  "dependencies": {
-    "@fastify/cors": "^11.0.1",
-    "@fastify/helmet": "^13.0.1",
-    "@fastify/one-line-logger": "^2.0.2",
-    "@fastify/swagger": "^9.5.1",
-    "@fastify/swagger-ui": "^5.2.2",
-    "fastify": "^5.3.3",
-    "fastify-type-provider-zod": "^4.0.2",
-    "zod": "^3.25.7"
-  },
-  "devDependencies": {
-    "@types/node": "^22.15.21",
-    "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
-  }
+	"name": "fastify-zod-swagger",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "Sample backend service",
+	"main": "index.js",
+	"scripts": {
+		"start": "node dist/server.js",
+		"build": "tsc",
+		"dev": "tsx watch src/server.ts",
+		"lint": "biome lint .",
+		"format": "biome format --write .",
+		"format:check": "biome format --check .",
+		"organize-imports": "biome organize-imports --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/teigorme/fastify-zod-swagger.git"
+	},
+	"keywords": [],
+	"author": "Igor Teixeira",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/teigorme/fastify-zod-swagger/issues"
+	},
+	"homepage": "https://github.com/teigorme/fastify-zod-swagger#readme",
+	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+	"dependencies": {
+		"@fastify/cors": "^11.0.1",
+		"@fastify/helmet": "^13.0.1",
+		"@fastify/one-line-logger": "^2.0.2",
+		"@fastify/swagger": "^9.5.1",
+		"@fastify/swagger-ui": "^5.2.2",
+		"fastify": "^5.3.3",
+		"fastify-type-provider-zod": "^4.0.2",
+		"zod": "^3.25.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.6",
+		"@types/node": "^22.15.21",
+		"tsx": "^4.19.4",
+		"typescript": "^5.8.3"
+	}
 }
