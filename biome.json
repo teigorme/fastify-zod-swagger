@@ -12,6 +12,7 @@
 		"enabled": true,
 		"indentStyle": "tab"
 	},
+
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -27,7 +28,7 @@
 		"enabled": true,
 		"actions": {
 			"source": {
-				"organizeImports": "on"
+				"organizeImports": "off"
 			}
 		}
 	}
