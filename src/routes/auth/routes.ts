@@ -3,7 +3,7 @@ import type { FastifyTypeInstance } from "@/@types/fastify-type-instance.js";
 import { fastify } from "@/server.js";
 import { StatusCodes } from "http-status-codes";
 import jwt from "jsonwebtoken";
-import { ENV } from "@/lib/env.js";
+import { ENV } from "@/core/env.js";
 
 const tags = ["auth"];
 

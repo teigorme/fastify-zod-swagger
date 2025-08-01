@@ -1,13 +1,13 @@
 -- CreateEnum
-CREATE TYPE "Roles" AS ENUM ('ADMIN', 'USER');
+CREATE TYPE "public"."Roles" AS ENUM ('ADMIN', 'USER');
 
 -- CreateTable
-CREATE TABLE "User" (
+CREATE TABLE "public"."User" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "role" "Roles" NOT NULL DEFAULT 'USER',
+    "role" "public"."Roles" NOT NULL DEFAULT 'USER',
     "is_block" BOOLEAN NOT NULL DEFAULT false,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE "User" (
 );
 
 -- CreateTable
-CREATE TABLE "RevokeRefreshToken" (
+CREATE TABLE "public"."RevokeRefreshToken" (
     "id" TEXT NOT NULL,
     "refreshToken" TEXT NOT NULL,
     "revoke" BOOLEAN NOT NULL DEFAULT true,
@@ -27,7 +27,7 @@ CREATE TABLE "RevokeRefreshToken" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+CREATE UNIQUE INDEX "User_email_key" ON "public"."User"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "RevokeRefreshToken_refreshToken_key" ON "RevokeRefreshToken"("refreshToken");
+CREATE UNIQUE INDEX "RevokeRefreshToken_refreshToken_key" ON "public"."RevokeRefreshToken"("refreshToken");
