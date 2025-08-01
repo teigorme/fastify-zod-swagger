@@ -1,0 +1,29 @@
+
+POST http://localhost:3333/api/register
+Content-Type: application/json
+
+{
+  "name": "Igor Teixeira",
+  "email": "igor@example.com",
+  "password": "minhasenha123"
+}
+
+###
+
+
+POST http://localhost:3333/api/login
+Content-Type: application/json
+
+{
+  "email": "igor@example.com",
+  "password": "minhasenha123"
+}
+
+###
+
+### 🔁 Refresh token (usando cookie)
+POST http://localhost:3333/api/refresh-token
+Content-Type: application/json
+
+
+{}
